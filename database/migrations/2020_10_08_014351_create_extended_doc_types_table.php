@@ -15,6 +15,7 @@ class CreateExtendedDocTypesTable extends Migration
     {
         Schema::create('extended_doc_types', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('extension_id');
             $table->timestamps();
         });
     }

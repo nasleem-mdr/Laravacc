@@ -15,6 +15,10 @@ class CreateLedgersTable extends Migration
     {
         Schema::create('ledgers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('transaction_id');
+            $table->foreignId('account_id');
+            $table->enum('entry_type', ['D', 'C']);
+            $table->double('amount', 20, 2);
             $table->timestamps();
         });
     }
