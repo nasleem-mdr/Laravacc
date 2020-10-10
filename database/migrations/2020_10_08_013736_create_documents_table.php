@@ -15,11 +15,11 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->timestamps('document_date');
+            $table->timestamp('document_date');
             $table->string('document_no', 100);
             $table->string('description');
             $table->foreignId('extended_doc_type_id');
-            $table->foreignId('document_type_id');
+            //$table->foreignId('document_type_id');
             $table->foreignId('user_id');
             $table->timestamps();
         });
