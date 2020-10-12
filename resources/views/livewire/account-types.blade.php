@@ -19,22 +19,21 @@
             @if($isOpen)
                 @include('livewire.acctype-create')
             @endif
-            <table class="table-fixed w-full">
-                <thead>
-                    <tr class="bg-gray-100">
-                        <th class="px-4 py-2 w-20">No.</th>
-                        <th class="px-4 py-2">Account Type</th>
-                        <th class="px-4 py-2">Description</th>
-                        <th class="px-4 py-2">Action</th>
+            <table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+                <thead class="text-white">
+                    <tr class="bg-teal-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                    @foreach ($headers as $key => $value)
+                    <th class="p-3 text-left border-grey-light border">{{ $value }}</th>                   
+                    @endforeach
                     </tr>
                 </thead>
-                <tbody>
-                    @foreach($accounttypes as $accounttype)
-                    <tr>
-                        <td class="border px-4 py-2">{{ $accounttype->id }}</td>
-                        <td class="border px-4 py-2">{{ $accounttype->name_type }}</td>
-                        <td class="border px-4 py-2">{{ $accounttype->description }}</td>
-                        <td class="border px-4 py-2">
+                <tbody class="flex-1 sm:flex-none">
+                    @foreach($data as $accounttype)
+                    <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                        <td class="border-grey-light border hover:bg-gray-100 p-3 w-1/12">{{ $accounttype->id }}</td>
+                        <td class="border-grey-light border hover:bg-gray-100 p-3 w-3/12">{{ $accounttype->name_type }}</td>
+                        <td class="border-grey-light border hover:bg-gray-100 p-3 w-6/12">{{ $accounttype->description }}</td>
+                        <td class="border-grey-light border hover:bg-gray-100 p-3 w-2/12">
                         <button wire:click="edit({{ $accounttype->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
                             <button wire:click="delete({{ $accounttype->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
                         </td>
@@ -42,6 +41,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <div class="mt-2">
+                {{ $data->links() }}
+            </div>
         </div>
     </div>
 </div>
