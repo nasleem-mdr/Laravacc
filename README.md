@@ -9,16 +9,15 @@
 
 ## About LABA (Laravel Best Accounting)
 
-LABA is a web accounting application build with Laravel framework. LABA is an acronym for "Laravel Best Accounting" and its means "profit" in english
+LABA is a web accounting application build with Laravel framework. LABA is an acronym for "Laravel Best Accounting" and its means "profit" in english.
+This application was created to assist companies in achieving their goals, namely profit
 
 ## Feature
 
+-   [Invoicing]
+-   [Purchasing]
 -   [GL Legder](https://laravel.com/docs/routing).
 -   [CRM](https://laravel.com/docs/container).
-
-# <<<<<<< HEAD
-
-> > > > > > > 881476a182c1447209eeb5a5c210df88f0dfbd7f
 
 ## Installation
 
@@ -31,7 +30,4 @@ LABA is a web accounting application build with Laravel framework. LABA is an ac
 5. Open your .env file and change the database name (DB_DATABASE)
 6. Run "php artisan key:generate"
 7. Run "php artisan migrate"
-   <<<<<<< HEAD
-8. # Run "php artisan serve"
-9. Run "php artisan serve"
-    > > > > > > > 881476a182c1447209eeb5a5c210df88f0dfbd7f
+8. Run "php artisan serve"
