@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\AccountTypes;
+use App\Http\Livewire\Account\ChartAccount;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +23,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 Route::middleware(['auth:sanctum', 'verified'])->get('accounttypes', AccountTypes::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('chartaccount', ChartAccount::class);
